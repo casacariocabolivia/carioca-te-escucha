@@ -133,9 +133,14 @@ export default function DashboardPage() {
             <p className="text-white/70 text-[13px]">Supervisor</p>
             <h1 className="text-[20px] font-bold">Tablero de feedback</h1>
           </div>
-          <Link href="/alertas" className="text-[13px] font-semibold bg-white/15 px-3 py-1.5 rounded-full text-white">
-            Alertas {stats?.openAlerts ? `(${stats.openAlerts})` : ''}
-          </Link>
+          <div className="flex gap-2">
+            <Link href="/qr" className="text-[13px] font-semibold bg-white/15 px-3 py-1.5 rounded-full text-white">
+              QR
+            </Link>
+            <Link href="/alertas" className="text-[13px] font-semibold bg-white/15 px-3 py-1.5 rounded-full text-white">
+              Alertas {stats?.openAlerts ? `(${stats.openAlerts})` : ''}
+            </Link>
+          </div>
         </div>
 
         {/* Stats */}
