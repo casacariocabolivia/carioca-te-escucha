@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "xpec": {
+      "type": "url",
+      "url": "https://mcp.xpec.ai/v1/mcp",
+      "headers": {
+        "Authorization": "Bearer xpec_qTApDj7Vk8aZlFboSbbNstQxhbABxMXxZAH15eVRyfY",
+        "X-Product-ID": "cmohdaulc0007jy0480kt4zn9"
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: var(--font-dm-sans), system-ui, sans-serif;
+  }
+
+  body {
+    @apply bg-bg-base text-gray-900;
+  }
+}
+
+@layer utilities {
+  .scroll-hide {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .scroll-hide::-webkit-scrollbar {
+    display: none;
+  }
+}

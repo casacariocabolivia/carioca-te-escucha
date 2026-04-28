@@ -1,0 +1,93 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Store {
+  id         String      @id @default(cuid())
+  name       String
+  slug       String      @unique
+  users      User[]
+  feedbacks  Feedback[]
+  alertRules AlertRule[]
+  createdAt  DateTime    @default(now())
+}
+
+model User {
+  id        String     @id @default(cuid())
+  name      String
+  email     String     @unique
+  password  String
+  role      String     @default("VENDOR")
+  storeId   String
+  store     Store      @relation(fields: [storeId], references: [id])
+  feedbacks   Feedback[]  @relation("VendorFeedbacks")
+  alertRules  AlertRule[] @relation("VendorAlertRules")
+  tasks       Task[]
+  createdAt   DateTime    @default(now())
+}
+
+model Feedback {
+  id           String    @id @default(cuid())
+  rating       Int
+  comment      String?
+  vendorId     String?
+  vendor       User?     @relation("VendorFeedbacks", fields: [vendorId], references: [id])
+  storeId      String
+  store        Store     @relation(fields: [storeId], references: [id])
+  reviewed     Boolean   @default(false)
+  reviewedById String?
+  reviewedAt   DateTime?
+  alerts       Alert[]
+  tasks        Task[]
+  createdAt    DateTime  @default(now())
+}
+
+model AlertRule {
+  id        String   @id @default(cuid())
+  storeId   String
+  store     Store    @relation(fields: [storeId], references: [id])
+  name      String
+  type      String
+  field     String   @default("rating")
+  operator  String?
+  value     String
+  vendorId  String?
+  vendor    User?    @relation("VendorAlertRules", fields: [vendorId], references: [id])
+  active    Boolean  @default(true)
+  alerts    Alert[]
+  createdAt DateTime @default(now())
+}
+
+model Alert {
+  id           String    @id @default(cuid())
+  ruleId       String
+  rule         AlertRule @relation(fields: [ruleId], references: [id])
+  feedbackId   String
+  feedback     Feedback  @relation(fields: [feedbackId], references: [id])
+  status       String    @default("OPEN")
+  resolvedById String?
+  resolvedAt   DateTime?
+  groupKey     String?
+  task         Task?
+  createdAt    DateTime  @default(now())
+}
+
+model Task {
+  id           String    @id @default(cuid())
+  alertId      String    @unique
+  alert        Alert     @relation(fields: [alertId], references: [id])
+  feedbackId   String
+  feedback     Feedback  @relation(fields: [feedbackId], references: [id])
+  assignedToId String
+  assignedTo   User      @relation(fields: [assignedToId], references: [id])
+  description  String
+  status       String    @default("OPEN")
+  createdAt    DateTime  @default(now())
+  closedAt     DateTime?
+}
