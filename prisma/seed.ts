@@ -27,10 +27,10 @@ async function main() {
   })
 
   const vendorData = [
-    { name: 'Ana R.', email: 'ana@carioca.com' },
-    { name: 'Luis M.', email: 'luis@carioca.com' },
-    { name: 'Sara G.', email: 'sara@carioca.com' },
-    { name: 'Carlos P.', email: 'carlos@carioca.com' },
+    { name: 'Edwin', email: 'edwin@carioca.com' },
+    { name: 'Elias', email: 'elias@carioca.com' },
+    { name: 'Alvaro', email: 'alvaro@carioca.com' },
+    { name: 'Silvia', email: 'silvia@carioca.com' },
   ]
 
   const vendors = await Promise.all(
