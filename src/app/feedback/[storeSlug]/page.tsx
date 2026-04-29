@@ -298,7 +298,7 @@ export default function FeedbackPage() {
             cursor: canSubmit ? 'pointer' : 'default',
           }}
         >
-          {submitting ? 'Enviando…' : 'Enviar feedback →'}
+          {submitting ? 'Enviando…' : 'Enviar mi opinión →'}
         </button>
         {!canSubmit && (
           <p className="text-[12px] text-gray-400 text-center mt-1.5">
