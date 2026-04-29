@@ -184,9 +184,9 @@ export default function FeedbackPage() {
   return (
     <div className="min-h-screen bg-bg-base flex flex-col">
       {/* Header */}
-      <div className="bg-primary px-5 pt-6 pb-5">
+      <div className="bg-primary px-5 pt-4 pb-4">
         {/* Logo + título de la app */}
-        <div className="flex items-center gap-3 mb-4">
+        <div className="flex items-center gap-3 mb-3">
           <div className="w-14 h-9 rounded-lg overflow-hidden shrink-0 shadow-sm">
             <Image
               src="/logo-carioca.jpg"
@@ -196,10 +196,7 @@ export default function FeedbackPage() {
               className="w-full h-full object-cover"
             />
           </div>
-          <div>
-            <p className="text-white font-bold text-[17px] leading-tight">Carioca Te Escucha</p>
-            <p className="text-white/60 text-[12px]">{storeName}</p>
-          </div>
+          <p className="text-white font-bold text-[17px] leading-tight">Carioca Te Escucha</p>
         </div>
         <h1 className="text-white text-[22px] font-bold leading-snug">¿Cómo fue tu visita hoy?</h1>
       </div>
