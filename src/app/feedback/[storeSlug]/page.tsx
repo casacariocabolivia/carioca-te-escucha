@@ -184,7 +184,7 @@ export default function FeedbackPage() {
   return (
     <div className="min-h-screen bg-bg-base flex flex-col">
       {/* Header */}
-      <div className="bg-primary px-5 pt-10 pb-7">
+      <div className="bg-primary px-5 pt-6 pb-5">
         {/* Logo + título de la app */}
         <div className="flex items-center gap-3 mb-4">
           <div className="w-14 h-9 rounded-lg overflow-hidden shrink-0 shadow-sm">
@@ -231,9 +231,8 @@ export default function FeedbackPage() {
           {/* Sección: Vendedor (opcional) */}
           <div className="flex justify-between items-center mb-2.5">
             <span className="text-[13px] font-semibold text-gray-500 uppercase tracking-wide">
-              ¿Quién te atendió?
+              ¿Quién te atendió? (Opcional)
             </span>
-            <span className="text-[12px] text-gray-400">Opcional</span>
           </div>
 
           <div className="grid grid-cols-2 gap-2.5 mb-5">
