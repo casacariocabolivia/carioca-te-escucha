@@ -1,6 +1,8 @@
+'use client'
+
 import Image from 'next/image'
 
-const FEEDBACK_URL = `${process.env.NEXTAUTH_URL ?? 'https://carioca-te-escucha.netlify.app'}/feedback/centro`
+const FEEDBACK_URL = 'https://carioca-te-escucha.netlify.app/feedback/centro'
 const QR_API = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&margin=16&data=${encodeURIComponent(FEEDBACK_URL)}`
 
 export default function QRPage() {
