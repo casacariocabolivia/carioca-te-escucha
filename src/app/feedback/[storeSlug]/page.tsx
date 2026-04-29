@@ -251,9 +251,6 @@ export default function FeedbackPage() {
                 <VendorInitial name={v.name} />
                 <div>
                   <div className="text-[14px] font-semibold text-gray-900">{v.name}</div>
-                  <div className="text-[12px] text-gray-500">
-                    {v.avgRating ? `★ ${v.avgRating}` : '★ —'}
-                  </div>
                 </div>
               </button>
             ))}
