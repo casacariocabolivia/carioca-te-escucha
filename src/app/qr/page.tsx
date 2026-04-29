@@ -23,8 +23,13 @@ export default function QRPage() {
           </div>
         </div>
 
-        <h1 className="text-[18px] font-bold text-gray-900 mb-1">Carioca Te Escucha</h1>
-        <p className="text-[13px] text-gray-400 mb-6">Escanea para dejar tu opinión</p>
+        <h1 className="text-[18px] font-bold text-gray-900 mb-2">Carioca Te Escucha</h1>
+        <p className="text-[15px] font-medium text-gray-600 leading-snug mb-1">
+          ¿Cómo te atendimos hoy?
+        </p>
+        <p className="text-[13px] text-gray-400 leading-relaxed mb-6">
+          Escanea el código y déjanos tu opinión. Tu comentario nos ayuda a mejorar.
+        </p>
 
         {/* QR */}
         <div className="flex justify-center mb-6">
