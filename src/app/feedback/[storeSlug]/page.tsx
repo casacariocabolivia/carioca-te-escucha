@@ -185,18 +185,20 @@ export default function FeedbackPage() {
     <div className="min-h-screen bg-bg-base flex flex-col">
       {/* Header */}
       <div className="bg-primary px-5 pt-4 pb-4">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-7 rounded-md overflow-hidden shrink-0 shadow-sm">
+        {/* Logo + título de la app */}
+        <div className="flex items-center gap-3 mb-3">
+          <div className="w-14 h-9 rounded-lg overflow-hidden shrink-0 shadow-sm">
             <Image
               src="/logo-carioca.jpg"
               alt="Carioca"
-              width={40}
-              height={28}
+              width={56}
+              height={36}
               className="w-full h-full object-cover"
             />
           </div>
-          <h1 className="text-white text-[20px] font-bold leading-snug">¿Cómo fue tu visita hoy?</h1>
+          <p className="text-white font-bold text-[17px] leading-tight">Carioca Te Escucha</p>
         </div>
+        <h1 className="text-white text-[22px] font-bold leading-snug">¿Cómo fue tu visita hoy?</h1>
       </div>
 
       {/* Card overlapping header */}
