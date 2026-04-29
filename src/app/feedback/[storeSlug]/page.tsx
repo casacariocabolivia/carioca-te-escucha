@@ -276,36 +276,35 @@ export default function FeedbackPage() {
             className="w-full min-h-[80px] rounded-[10px] border border-gray-200 px-3 py-3 font-sans text-[15px] text-gray-900 bg-bg-base resize-none outline-none focus:border-primary transition-colors"
             style={{ borderWidth: '1.5px' }}
           />
-          <div className="text-[12px] text-gray-400 text-right mb-5">
+          <div className="text-[12px] text-gray-400 text-right">
             {comment.length}/200
           </div>
 
-          {/* Botón enviar */}
-          <button
-            type="button"
-            disabled={!canSubmit || submitting}
-            onClick={handleSubmit}
-            className="w-full py-4 rounded-xl font-bold text-[16px] tracking-tight transition-all"
-            style={{
-              background: canSubmit ? '#1C7C3C' : '#E5E7EB',
-              color: canSubmit ? '#FFFFFF' : '#9CA3AF',
-              cursor: canSubmit ? 'pointer' : 'default',
-            }}
-          >
-            {submitting ? 'Enviando…' : 'Enviar feedback →'}
-          </button>
-
-          {!canSubmit && (
-            <p className="text-[12px] text-gray-400 text-center mt-2">
-              Selecciona una carita para continuar
-            </p>
-          )}
+          {/* Espacio para que el botón fijo no tape contenido */}
+          <div className="h-24" />
         </div>
       </div>
 
-      {/* Home indicator */}
-      <div className="flex justify-center py-2 pb-4">
-        <div className="w-28 h-1 rounded-full bg-gray-900 opacity-40" />
+      {/* Botón enviar — fijo en la parte inferior */}
+      <div className="fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-sm px-4 pt-3 pb-8 border-t border-gray-100">
+        <button
+          type="button"
+          disabled={!canSubmit || submitting}
+          onClick={handleSubmit}
+          className="w-full py-4 rounded-xl font-bold text-[16px] tracking-tight transition-all"
+          style={{
+            background: canSubmit ? '#1C7C3C' : '#E5E7EB',
+            color: canSubmit ? '#FFFFFF' : '#9CA3AF',
+            cursor: canSubmit ? 'pointer' : 'default',
+          }}
+        >
+          {submitting ? 'Enviando…' : 'Enviar feedback →'}
+        </button>
+        {!canSubmit && (
+          <p className="text-[12px] text-gray-400 text-center mt-1.5">
+            Selecciona una carita para continuar
+          </p>
+        )}
       </div>
     </div>
   )
